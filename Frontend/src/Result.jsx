@@ -8,7 +8,7 @@ import trophy from './Images/trophy.jpg'
 function Result() {
   const location = useLocation();
   const data = location.state
-  console.log("result")
+  // console.log("result")
   const navigate = useNavigate()
   const handleclick = ()=>{
     navigate('/')
@@ -19,9 +19,12 @@ function Result() {
             <div className="modal-top">
                 <img className="modal-icon u-imgResponsive" src={trophy} alt="Trophy" />
                 <div className="modal-header">Congratulations</div>
-                <div className="modal-subheader">You have successfully completrd the Quiz</div>
-
-                <div className="modal-score">Your Score: <span className="final-score"> {data}</span>
+                <div className="modal-subheader">You have successfully completed the Quiz</div>
+                <div className="modal-score">Your Score: <span className="final-score"> {data.correct_answers}</span>
+                </div>
+                <div className="modal-score">Your Completeiom Time: <span className="final-score"> {data.completeTime}sec</span>
+                </div>
+                <div className="modal-score">Your Iq: <span className="final-score"> {data.iq}(out of 10)</span>
                 </div>
                 <div className='flex justify-center mt-2'>
                   <button className='bg-blue-500 text-white rounded-lg p-2 mt' onClick={handleclick}>Home page</button>
